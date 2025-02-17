@@ -23,15 +23,15 @@ game_over_sound = pygame.mixer.Sound("go.mp3")
 pixel_font = pygame.font.Font("PressStart2P.ttf", 16)
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Bello n'ajer")
+pygame.display.set_caption("FlappyBello")
 
 bird_options = [
-    {"name": "bello", "image_path": "bello me flpbll.png"},
-    {"name": "putana e lluksit", "image_path": "alma.jpg"},
-    {"name": "god himself", "image_path": "god himself.jpg"},
-    {"name": "logo michelinit", "image_path": "logo michelinit.jpg"},
-    {"name": "PhD teknik nderzimi", "image_path": "safeti.jpg"},
-    {"name": "terminatori", "image_path": "terminatori.jpg"},
+    {"name": "", "image_path": ""},
+    {"name": "", "image_path": ""},
+    {"name": "", "image_path": ""},
+    {"name": "", "image_path": ""},
+    {"name": "", "image_path": ""},
+    {"name": "", "image_path": ""},
 ]
 
 selected_bird = None
@@ -134,7 +134,7 @@ def draw_pipe(pipe):
 
 def game_over():
     font = pygame.font.Font("PressStart2P.ttf", 18)
-    text = font.render("Game Over, Fituat K@r!n", True, (255, 0, 0))
+    text = font.render("Game Over,", True, (255, 0, 0))
     restart_text = font.render("Click to Restart", True, (0, 0, 0))
 
     text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 20))
@@ -147,7 +147,7 @@ def game_over():
     pygame.mixer.music.stop()
     game_over_sound.play()
 
-    # Wait for an event to restart the game
+   
     waiting_for_restart = True
     while waiting_for_restart:
         for event in pygame.event.get():
@@ -162,7 +162,7 @@ def game_over():
 
         pygame.time.Clock().tick(30)
 
-    # Reset the game state and restart the game loop
+ 
     reset_game_state()
 
 def reset_game_state():
@@ -176,9 +176,8 @@ def draw_clouds():
     for _ in range(3):
         cloud_x = random.randint(0, WIDTH)
         cloud_y = random.randint(20, HEIGHT // 2)
-        # ... (draw clouds, if needed)
+      
 
-# Load the background image
 background_image = pygame.image.load(BACKGROUND_IMAGE_PATH).convert_alpha()
 background_image = pygame.transform.scale(background_image, (WIDTH, HEIGHT))
 
@@ -205,7 +204,6 @@ bird_y = HEIGHT // 2
 bird_velocity = 0
 pipes = []
 
-# ... (previous code)
 
 while True:
     for event in pygame.event.get():
@@ -229,7 +227,7 @@ while True:
 
     bird_rect = pygame.Rect(WIDTH // 3, bird_y, BIRD_SIZE, BIRD_SIZE)
 
-    # Draw and update the coin
+
     if not coin["visible"] and random.randint(0, 100) < 2:
         coin["visible"] = True
         coin["x"] = WIDTH
