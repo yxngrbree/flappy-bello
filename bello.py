@@ -26,7 +26,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("FlappyBello")
 
 bird_options = [
-    {"name": "", "image_path": ""},
+    {"name": "", "image_path": ""}, # insert your own images to play
     {"name": "", "image_path": ""},
     {"name": "", "image_path": ""},
     {"name": "", "image_path": ""},
