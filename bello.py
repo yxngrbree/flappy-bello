@@ -262,11 +262,7 @@ while True:
     draw_clouds()
     for pipe in pipes:
         draw_pipe(pipe)
-
     pygame.draw.rect(screen, GROUND_COLOR, (0, HEIGHT - 20, WIDTH, 20))
-
     draw_bird(WIDTH // 3, bird_y)
-
     pygame.display.flip()
-
     clock.tick(30)
