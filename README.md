@@ -41,7 +41,7 @@ Running the Game
 To start the game, run:
 ```
 python bello.py
-
+```
 
 
 
